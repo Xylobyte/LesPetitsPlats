@@ -1,0 +1,51 @@
+header {
+  background-image: url("/assets/bg_home.webp");
+  color: white;
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  min-height: 300px;
+}
+header nav {
+  padding: 30px;
+}
+header nav h1 {
+  font-size: 1.8em;
+}
+header nav img {
+  width: 20px;
+  height: 20px;
+}
+header h2 {
+  color: var(--primary-color);
+  font-size: 2.5em;
+  text-align: center;
+}
+header > div {
+  height: 100%;
+}
+header .search-bar-ct {
+  color: var(--on-background);
+  position: relative;
+}
+header .search-bar-ct input {
+  width: 65vw;
+  padding: 22px 50px 22px 30px;
+  background-color: var(--surface-on-background);
+  font-size: 1em;
+}
+header .search-bar-ct button {
+  position: absolute;
+  right: 10px;
+  background: var(--on-background);
+  padding: 10px 11px;
+  transition: border-radius 0.2s;
+}
+header .search-bar-ct button:hover {
+  border-radius: 30px;
+}
+header .search-bar-ct button:active {
+  background: var(--on-background-light);
+}
+
+/*# sourceMappingURL=home.css.map */
