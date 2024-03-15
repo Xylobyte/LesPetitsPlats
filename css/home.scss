@@ -40,7 +40,21 @@ header {
             font-size: 1em;
         }
 
-        button {
+        button#clear-btn {
+            position: absolute;
+            right: 80px;
+            background: transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s;
+
+            &.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        button#search-btn {
             position: absolute;
             right: 10px;
             background: var(--on-background);
@@ -56,4 +70,65 @@ header {
             }
         }
     }
+}
+
+.custom-select {
+    width: 200px;
+    position: relative;
+
+    button {
+        background: transparent;
+        padding: 15px;
+        background: var(--surface-on-background);
+
+        img {
+            transition: transform 0.3s;
+            transform: rotate(180deg);
+        }
+    }
+
+    ul.list {
+        position: absolute;
+        list-style: none;
+        max-height: 0;
+        transition: max-height 0.3s;
+        overflow: hidden;
+        top: 100%;
+        width: 100%;
+        background: var(--surface-on-background);
+        border-radius: 0 0 10px 10px;
+
+        li {
+            padding: 4px 15px;
+            cursor: pointer;
+            transition: background-color 0.1s;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.06);
+            }
+
+            &:active {
+                background-color: var(--primary-color);
+            }
+        }
+    }
+
+    &.open {
+        button {
+            border-radius: 10px 10px 0 0;
+
+            img {
+                transform: rotate(0deg);
+            }
+        }
+
+        ul.list {
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+    }
+}
+
+main {
+    padding: 20px;
 }

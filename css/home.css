@@ -34,18 +34,80 @@ header .search-bar-ct input {
   background-color: var(--surface-on-background);
   font-size: 1em;
 }
-header .search-bar-ct button {
+header .search-bar-ct button#clear-btn {
+  position: absolute;
+  right: 80px;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+header .search-bar-ct button#clear-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+header .search-bar-ct button#search-btn {
   position: absolute;
   right: 10px;
   background: var(--on-background);
   padding: 10px 11px;
   transition: border-radius 0.2s;
 }
-header .search-bar-ct button:hover {
+header .search-bar-ct button#search-btn:hover {
   border-radius: 30px;
 }
-header .search-bar-ct button:active {
+header .search-bar-ct button#search-btn:active {
   background: var(--on-background-light);
+}
+
+.custom-select {
+  width: 200px;
+  position: relative;
+}
+.custom-select button {
+  background: transparent;
+  padding: 15px;
+  background: var(--surface-on-background);
+}
+.custom-select button img {
+  transition: transform 0.3s;
+  transform: rotate(180deg);
+}
+.custom-select ul.list {
+  position: absolute;
+  list-style: none;
+  max-height: 0;
+  transition: max-height 0.3s;
+  overflow: hidden;
+  top: 100%;
+  width: 100%;
+  background: var(--surface-on-background);
+  border-radius: 0 0 10px 10px;
+}
+.custom-select ul.list li {
+  padding: 4px 15px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+.custom-select ul.list li:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.custom-select ul.list li:active {
+  background-color: var(--primary-color);
+}
+.custom-select.open button {
+  border-radius: 10px 10px 0 0;
+}
+.custom-select.open button img {
+  transform: rotate(0deg);
+}
+.custom-select.open ul.list {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+main {
+  padding: 20px;
 }
 
 /*# sourceMappingURL=home.css.map */
