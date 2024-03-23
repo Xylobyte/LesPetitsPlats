@@ -32,8 +32,8 @@
 		<div class="search-bar-ct flex align-center">
 			<input aria-label="Rechercher" type="text" name="search" id="search-bar" placeholder="Rechercher une recette, un ingrédient, ..."
 				   class="border-r10 b-shadow-small">
-			<button id="clear-btn">
-				<img src="assets/close.svg" alt="">
+			<button class="clear-btn" id="clear-btn">
+				<img src="assets/close.svg" alt="Clear text">
 			</button>
 			<button id="search-btn" class="border-r10">
 				<img src="assets/search.png" alt="">
@@ -45,7 +45,7 @@
 <main class="flex column gap20">
 	<div class="flex space-between align-center">
 		<div class="flex gap30">
-			<div class="custom-select flex column b-shadow-small border-r10">
+			<div class="custom-select flex column">
 				<button class="flex space-between align-center border-r10"
 						role="combobox"
 						aria-haspopup="listbox"
@@ -54,39 +54,92 @@
 					<span>Ingrédients</span>
 					<img src="assets/arrowup.svg" alt="">
 				</button>
-				<ul class="list" role="listbox">
-					<li role="option">Jus de citron</li>
-					<li role="option">Glaçons</li>
-					<li role="option">Tomate</li>
-					<li role="option">Poulet</li>
-					<li role="option">Poivron rouge</li>
-					<li role="option">Thon en miettes</li>
-					<li role="option">Vinaigrette</li>
-				</ul>
+				<div class="list-ct border-r10 b-shadow-small">
+					<ul role="listbox">
+						<li class="search flex align-center">
+							<input type="text">
+							<button class="clear-btn">
+								<img src="assets/close.svg" alt="Clear text">
+							</button>
+							<img src="assets/small-search.svg" alt="">
+						</li>
+						<li role="option">Jus de citron</li>
+						<li role="option">Glaçons</li>
+						<li role="option">Tomate</li>
+						<li role="option">Poulet</li>
+						<li role="option">Poivron rouge</li>
+						<li role="option">Thon en miettes</li>
+						<li role="option">Vinaigrette</li>
+					</ul>
+				</div>
 			</div>
 
-			<div class="custom-select flex column b-shadow-small border-r10">
+			<div class="custom-select flex column">
 				<button class="flex space-between align-center border-r10"
 						role="combobox"
 						aria-haspopup="listbox"
 						aria-expanded="false"
 						aria-controls="list">
-					<span>Ingrédients</span>
+					<span>Appareils</span>
 					<img src="assets/arrowup.svg" alt="">
 				</button>
-				<ul class="list" role="listbox">
-					<li role="option">Jus de citron</li>
-					<li role="option">Glaçons</li>
-					<li role="option">Tomate</li>
-					<li role="option">Poulet</li>
-					<li role="option">Poivron rouge</li>
-					<li role="option">Thon en miettes</li>
-					<li role="option">Vinaigrette</li>
-				</ul>
+				<div class="list-ct border-r10 b-shadow-small">
+					<ul role="listbox">
+						<li class="search flex align-center">
+							<input type="text">
+							<button class="clear-btn">
+								<img src="assets/close.svg" alt="Clear text">
+							</button>
+							<img src="assets/small-search.svg" alt="">
+						</li>
+						<li role="option">Jus de citron</li>
+						<li role="option">Glaçons</li>
+						<li role="option">Tomate</li>
+						<li role="option">Poulet</li>
+						<li role="option">Poivron rouge</li>
+						<li role="option">Thon en miettes</li>
+						<li role="option">Vinaigrette</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="custom-select flex column">
+				<button class="flex space-between align-center border-r10"
+						role="combobox"
+						aria-haspopup="listbox"
+						aria-expanded="false"
+						aria-controls="list">
+					<span>Ustensiles</span>
+					<img src="assets/arrowup.svg" alt="">
+				</button>
+				<div class="list-ct border-r10 b-shadow-small">
+					<ul role="listbox">
+						<li class="search flex align-center">
+							<input type="text">
+							<button class="clear-btn">
+								<img src="assets/close.svg" alt="Clear text">
+							</button>
+							<img src="assets/small-search.svg" alt="">
+						</li>
+						<li role="option">Jus de citron</li>
+						<li role="option">Glaçons</li>
+						<li role="option">Tomate</li>
+						<li role="option">Poulet</li>
+						<li role="option">Poivron rouge</li>
+						<li role="option">Thon en miettes</li>
+						<li role="option">Vinaigrette</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
 		<h3>1500 recettes</h3>
+	</div>
+
+	<div id="filters">
+	</div>
+
+	<div id="gallery">
 	</div>
 </main>
 

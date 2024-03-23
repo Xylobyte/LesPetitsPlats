@@ -34,18 +34,6 @@ header .search-bar-ct input {
   background-color: var(--surface-on-background);
   font-size: 1em;
 }
-header .search-bar-ct button#clear-btn {
-  position: absolute;
-  right: 80px;
-  background: transparent;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s;
-}
-header .search-bar-ct button#clear-btn.visible {
-  opacity: 1;
-  visibility: visible;
-}
 header .search-bar-ct button#search-btn {
   position: absolute;
   right: 10px;
@@ -60,49 +48,88 @@ header .search-bar-ct button#search-btn:active {
   background: var(--on-background-light);
 }
 
+button.clear-btn {
+  position: absolute;
+  right: 80px;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+button.clear-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 .custom-select {
   width: 200px;
   position: relative;
+  z-index: 10;
 }
-.custom-select button {
+.custom-select > button {
   background: transparent;
   padding: 15px;
   background: var(--surface-on-background);
 }
-.custom-select button img {
+.custom-select > button img {
   transition: transform 0.3s;
   transform: rotate(180deg);
 }
-.custom-select ul.list {
+.custom-select div.list-ct {
   position: absolute;
-  list-style: none;
-  max-height: 0;
-  transition: max-height 0.3s;
+  min-height: 100%;
   overflow: hidden;
-  top: 100%;
+  top: 0;
   width: 100%;
   background: var(--surface-on-background);
-  border-radius: 0 0 10px 10px;
+  z-index: -1;
+  padding-top: 26%;
 }
-.custom-select ul.list li {
+.custom-select ul {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  position: relative;
+}
+.custom-select ul li {
   padding: 4px 15px;
   cursor: pointer;
   transition: background-color 0.1s;
 }
-.custom-select ul.list li:hover {
-  background-color: rgba(0, 0, 0, 0.06);
-}
-.custom-select ul.list li:active {
+.custom-select ul li:hover {
   background-color: var(--primary-color);
 }
-.custom-select.open button {
-  border-radius: 10px 10px 0 0;
+.custom-select ul li.search {
+  cursor: auto;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+.custom-select ul li.search input {
+  width: 100%;
+  border-radius: 3px;
+  border: var(--on-background-light) 1px solid;
+  color: var(--on-background-light);
+  padding: 5px;
+  background: white;
+}
+.custom-select ul li.search > img, .custom-select ul li.search > button {
+  position: absolute;
+  right: 25px;
+}
+.custom-select ul li.search button {
+  right: 45px;
+}
+.custom-select ul li.search button img {
+  height: 12px;
+  width: 12px;
 }
 .custom-select.open button img {
   transform: rotate(0deg);
 }
-.custom-select.open ul.list {
-  max-height: 200px;
+.custom-select.open ul {
+  max-height: 250px;
   overflow-y: scroll;
 }
 
