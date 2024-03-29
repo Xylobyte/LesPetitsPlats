@@ -4,10 +4,12 @@ import {Recipe} from "./templates/recipe.js";
 // Global variables
 // ------------------------------------------------------------------------------
 let searchedRecipes = [];
-let filters = [];
-let filterOptions = [];
+let selectedFilters = [];
+let availableFilters = [];
 
 export const setSearchedRecipes = (recipes) => {
+    if (recipes === searchedRecipes) return;
+
     searchedRecipes = recipes;
     const recipesDOM = searchedRecipes.map(r => new Recipe(r).getCardDOM());
     document.getElementById("gallery").replaceChildren(...recipesDOM);

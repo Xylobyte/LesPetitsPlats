@@ -70,7 +70,7 @@
 }
 
 .b-shadow-large {
-  box-shadow: 0 4px 34px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 34px 10px rgba(0, 0, 0, 0.15);
 }
 
 body {
