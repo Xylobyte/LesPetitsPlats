@@ -175,11 +175,10 @@ main {
         position: relative;
         background: var(--surface-on-background);
         cursor: pointer;
-        transition: border 0.2s;
-        border-color: var(--primary-color);
+        transition: box-shadow 0.2s;
 
         &:hover {
-            border: 2px solid var(--primary-color);
+            box-shadow: 0 4px 34px 10px rgba(255, 209, 91, 0.2);
         }
 
         .time {
