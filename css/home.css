@@ -39,13 +39,13 @@ header .search-bar-ct button#search-btn {
   right: 10px;
   background: var(--on-background);
   padding: 10px 11px;
-  transition: border-radius 0.2s;
+  transition-duration: 0.2s;
+  transition-property: color, background;
+  color: white;
 }
 header .search-bar-ct button#search-btn:hover {
-  border-radius: 30px;
-}
-header .search-bar-ct button#search-btn:active {
-  background: var(--on-background-light);
+  background: var(--primary-color);
+  color: black;
 }
 
 button.clear-btn {
@@ -135,6 +135,18 @@ button.clear-btn.visible {
 
 main {
   padding: 20px 6vw;
+}
+
+#filters > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+}
+#filters > div img {
+  cursor: pointer;
 }
 
 #gallery {

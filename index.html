@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/home.css">
 	<script src="scripts/app.js" type="module"></script>
 	<script src="scripts/utils/inputs.js" type="module"></script>
+	<script src="scripts/core/filters.js" type="module"></script>
 </head>
 <body>
 
@@ -36,8 +37,12 @@
 			<button class="clear-btn" id="clear-btn">
 				<img src="assets/close.svg" alt="Clear text">
 			</button>
+
 			<button id="search-btn" class="border-r10">
-				<img src="assets/search.png" alt="">
+				<svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="10" cy="10.4219" r="9.5" stroke="currentColor"/>
+					<line x1="18.3536" y1="19.0683" x2="27.3536" y2="28.0683" stroke="currentColor"/>
+				</svg>
 			</button>
 		</div>
 	</div>
@@ -46,7 +51,7 @@
 <main class="flex column gap20">
 	<div class="flex space-between align-center gap10">
 		<div class="flex gap30">
-			<div class="custom-select flex column">
+			<div class="custom-select ing flex column">
 				<button class="flex space-between align-center border-r10"
 						role="combobox"
 						aria-haspopup="listbox"
@@ -75,7 +80,7 @@
 				</div>
 			</div>
 
-			<div class="custom-select flex column">
+			<div class="custom-select app flex column">
 				<button class="flex space-between align-center border-r10"
 						role="combobox"
 						aria-haspopup="listbox"
@@ -104,7 +109,7 @@
 				</div>
 			</div>
 
-			<div class="custom-select flex column">
+			<div class="custom-select ust flex column">
 				<button class="flex space-between align-center border-r10"
 						role="combobox"
 						aria-haspopup="listbox"
@@ -137,7 +142,7 @@
 		<h3 id="recipes-number">1500 recettes</h3>
 	</div>
 
-	<div id="filters">
+	<div id="filters" class="flex gap15 align-center">
 	</div>
 
 	<div id="gallery">

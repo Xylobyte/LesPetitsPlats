@@ -45,14 +45,13 @@ header {
             right: 10px;
             background: var(--on-background);
             padding: 10px 11px;
-            transition: border-radius 0.2s;
+            transition-duration: 0.2s;
+            transition-property: color, background;
+            color: white;
 
             &:hover {
-                border-radius: 30px;
-            }
-
-            &:active {
-                background: var(--on-background-light);
+                background: var(--primary-color);
+                color: black;
             }
         }
     }
@@ -163,6 +162,21 @@ button.clear-btn {
 
 main {
     padding: 20px 6vw;
+}
+
+#filters {
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: var(--primary-color);
+        border-radius: 10px;
+        padding: 15px;
+
+        img {
+            cursor: pointer;
+        }
+    }
 }
 
 #gallery {
