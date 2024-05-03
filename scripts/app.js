@@ -1,5 +1,6 @@
 import {searchV1} from "./search/search-v1.js";
 import {applyFilters, filterLi, genAvailableFilters, showFilters} from "./core/filters.js";
+import {showList} from "./core/recipes-list.js";
 
 // Global variables
 // ------------------------------------------------------------------------------
@@ -10,13 +11,14 @@ let availableFilters = [];
 export const setSearchedRecipes = (recipes) => {
     if (recipes === searchedRecipes) return;
     searchedRecipes = recipes;
-    availableFilters = genAvailableFilters(recipes);
 
+    const filteredRecipes = applyFilters();
+    showList(filteredRecipes);
+
+    availableFilters = genAvailableFilters(filteredRecipes);
     filterLi(document.querySelector('.custom-select.ing ul'), "", "ing");
     filterLi(document.querySelector('.custom-select.app ul'), "", "app");
     filterLi(document.querySelector('.custom-select.ust ul'), "", "ust");
-
-    applyFilters();
 }
 
 export const getSearchedRecipes = () => {
@@ -36,13 +38,27 @@ export const addToSelectedFilters = (filter) => {
         selectedFilters.push(filter);
     }
     showFilters();
-    applyFilters();
+
+    const filteredRecipes = applyFilters();
+    showList(filteredRecipes);
+
+    availableFilters = genAvailableFilters(filteredRecipes);
+    filterLi(document.querySelector('.custom-select.ing ul'), "", "ing");
+    filterLi(document.querySelector('.custom-select.app ul'), "", "app");
+    filterLi(document.querySelector('.custom-select.ust ul'), "", "ust");
 }
 
 export const removeFromSelectedFilters = (filter) => {
     selectedFilters = selectedFilters.filter(f => f.filter !== filter.filter && !f.type !== filter.type);
     showFilters();
-    applyFilters();
+
+    const filteredRecipes = applyFilters();
+    showList(filteredRecipes);
+
+    availableFilters = genAvailableFilters(filteredRecipes);
+    filterLi(document.querySelector('.custom-select.ing ul'), "", "ing");
+    filterLi(document.querySelector('.custom-select.app ul'), "", "app");
+    filterLi(document.querySelector('.custom-select.ust ul'), "", "ust");
 }
 
 // Init view and search engine

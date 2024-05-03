@@ -1,6 +1,5 @@
 // Manage input fields
 // ------------------------------------------------------------------------------
-import {getAvailableFilters} from "../app.js";
 import {searchV1} from "../search/search-v1.js";
 import {filterLi, findType} from "../core/filters.js";
 

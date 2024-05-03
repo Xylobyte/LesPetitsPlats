@@ -1,6 +1,5 @@
 // Event listener for li filters
 // ------------------------------------------------------------------------------
-import {showList} from "./recipes-list.js";
 import {addToSelectedFilters, getAvailableFilters, getSearchedRecipes, getSelectedFilters, removeFromSelectedFilters} from "../app.js";
 
 const addFilter = (filter, type) => {
@@ -8,7 +7,6 @@ const addFilter = (filter, type) => {
         filter,
         type: type
     }
-
     addToSelectedFilters(obj);
 }
 
@@ -85,5 +83,27 @@ export const filterLi = (ul, value, type) => {
 }
 
 export const applyFilters = () => {
-    showList(getSearchedRecipes());
+    const recipes = getSearchedRecipes();
+
+    return recipes.filter(recipe => {
+        const filters = getSelectedFilters();
+        let add = true;
+        for (const filter of filters) {
+            switch (filter.type) {
+                case "ing":
+                    const findI = recipe.ingredients.find(ing => ing.ingredient === filter.filter);
+                    if (!findI) add = false;
+                    break;
+                case "app":
+                    if (recipe.appliance !== filter.filter) add = false;
+                    break;
+                case "ust":
+                    const findU = recipe.ustensils.find(ust => ust === filter.filter);
+                    if (!findU) add = false;
+                    break;
+            }
+            if (!add) break;
+        }
+        return add;
+    });
 }
