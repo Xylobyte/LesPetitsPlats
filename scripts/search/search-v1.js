@@ -3,11 +3,10 @@ import {setSearchedRecipes} from "../app.js";
 import {cleanString} from "../utils/strings.js";
 
 export const searchV1 = (search) => {
-    const cleanedSearch = cleanString(search).toLowerCase();
-
     if (search.length < 3) {
         setSearchedRecipes(recipes);
     } else {
+        const cleanedSearch = cleanString(search).toLowerCase();
         const tmpList = [];
 
         for (const recipe of recipes) {

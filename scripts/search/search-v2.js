@@ -44,17 +44,15 @@ export const createHashMap = () => {
 };
 
 export const searchV2 = (search) => {
-    const cleanedSearch = cleanString(search).toLowerCase();
-
-    if (search.length < 3) {
+    if (search.length < 3 || hashmap === undefined) {
         setSearchedRecipes(recipes);
     } else {
         const queryWords = cleanString(search).toLowerCase().trim().split(/\W+/);
         const results = queryWords.map(word => hashmap[word] || []);
 
-        // Find intersection of all sets
         if (results.length === 0) {
             setSearchedRecipes([]);
+            return;
         }
         const intersection = results.reduce((a, b) => a.filter(c => b.includes(c)));
 
