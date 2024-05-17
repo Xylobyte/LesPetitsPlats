@@ -1,5 +1,6 @@
 import {recipes} from "../data/recipes.js";
 import {setSearchedRecipes} from "../app.js";
+import {cleanString} from "../utils/strings.js";
 
 export const searchV1 = (search) => {
     const cleanedSearch = cleanString(search).toLowerCase();
@@ -21,12 +22,4 @@ export const searchV1 = (search) => {
 
         setSearchedRecipes(tmpList);
     }
-}
-
-const removeAccents = input => input.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-const removeSpecialChars = input => input.replace(/[^\w\s]/gi, "");
-
-const cleanString = (input) => {
-    const withoutAccents = removeAccents(input);
-    return removeSpecialChars(withoutAccents);
 }
