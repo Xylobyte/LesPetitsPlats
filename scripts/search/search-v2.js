@@ -18,15 +18,7 @@ export const createHashMap = () => {
         const words = searchableText.split(/\W+/);
 
         words.forEach(word => {
-            if (word.length < 2) {
-                if (!map[word]) {
-                    map[word] = new Set();
-                }
-                map[word].add(id);
-                return;
-            }
-
-            for (let i = 2; i <= word.length; i++) {
+            for (let i = 1; i <= word.length; i++) {
                 const substring = word.substring(0, i);
                 if (!map[substring]) {
                     map[substring] = new Set();
@@ -41,6 +33,7 @@ export const createHashMap = () => {
     }
 
     hashmap = map;
+    console.log(map)
 };
 
 export const searchV2 = (search) => {
