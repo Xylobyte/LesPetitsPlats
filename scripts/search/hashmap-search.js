@@ -1,8 +1,7 @@
 import {recipes} from "../data/recipes.js";
 import {setSearchedRecipes} from "../app.js";
 import {cleanString} from "../utils/strings.js";
-
-let hashmap = undefined;
+import {getSearchHashmap} from "../utils/store.js";
 
 export const createHashMap = () => {
     const map = {};
@@ -32,10 +31,12 @@ export const createHashMap = () => {
         map[key] = Array.from(map[key]);
     }
 
-    hashmap = map;
+    return map;
 };
 
 export const hashmapSearch = (search) => {
+    const hashmap = getSearchHashmap();
+
     if (search.length < 3 || hashmap === undefined) {
         setSearchedRecipes(recipes);
     } else {

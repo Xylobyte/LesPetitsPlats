@@ -1,6 +1,7 @@
 import {applyFilters, filterLi, genAvailableFilters, showFilters} from "./core/filters.js";
 import {showList} from "./core/recipes-list.js";
-import {createHashMap, hashmapSearch} from "./search/hashmap-search.js";
+import {hashmapSearch} from "./search/hashmap-search.js";
+import {getSearchHashmap} from "./utils/store.js";
 
 // Global variables
 // ------------------------------------------------------------------------------
@@ -65,7 +66,7 @@ export const removeFromSelectedFilters = (filter) => {
 // ------------------------------------------------------------------------------
 window.addEventListener('load', () => {
     // ----- Search V2
-    createHashMap();
+    getSearchHashmap();
     hashmapSearch('');
 })
 

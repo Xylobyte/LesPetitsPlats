@@ -1,3 +1,5 @@
+export const data_version = 1;
+
 export const recipes = [
     {
         "id": 1,
