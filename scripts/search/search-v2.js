@@ -33,7 +33,6 @@ export const createHashMap = () => {
     }
 
     hashmap = map;
-    console.log(map)
 };
 
 export const searchV2 = (search) => {
