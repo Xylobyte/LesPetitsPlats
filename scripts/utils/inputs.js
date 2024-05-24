@@ -1,7 +1,7 @@
 // Manage input fields
 // ------------------------------------------------------------------------------
-import {searchV1} from "../search/search-v1.js";
 import {filterLi, findType} from "../core/filters.js";
+import {hashmapSearch} from "../search/hashmap-search.js";
 
 const clearBtn = document.getElementById("clear-btn");
 
@@ -13,7 +13,7 @@ document.getElementById("search-bar").addEventListener('input', e => {
 
 clearBtn.addEventListener('click', e => {
     document.getElementById("search-bar").value = "";
-    searchV1('');
+    hashmapSearch('');
     clearBtn.classList.remove('visible');
 })
 
