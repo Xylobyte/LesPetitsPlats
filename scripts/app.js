@@ -1,7 +1,6 @@
 import {applyFilters, filterLi, genAvailableFilters, showFilters} from "./core/filters.js";
 import {showList} from "./core/recipes-list.js";
-import {createHashMap, searchV2} from "./search/search-v2.js";
-import {searchV1} from "./search/search-v1.js";
+import {loopSearch} from "./search/loop-search.js";
 
 // Global variables
 // ------------------------------------------------------------------------------
@@ -66,17 +65,10 @@ export const removeFromSelectedFilters = (filter) => {
 // ------------------------------------------------------------------------------
 window.addEventListener('load', () => {
     // ----- Search V1
-    // searchV1('');
-
-    // ----- Search V2
-    createHashMap();
-    searchV2('');
+    loopSearch('');
 })
 
 document.getElementById("search-bar").addEventListener('input', e => {
     // ----- Search V1
-    // searchV1(e.target.value);
-
-    // ----- Search V2
-    searchV2(e.target.value);
+    loopSearch(e.target.value);
 })

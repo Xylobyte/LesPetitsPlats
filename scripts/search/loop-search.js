@@ -2,7 +2,7 @@ import {recipes} from "../data/recipes.js";
 import {setSearchedRecipes} from "../app.js";
 import {cleanString} from "../utils/strings.js";
 
-export const searchV1 = (search) => {
+export const loopSearch = (search) => {
     if (search.length < 3) {
         setSearchedRecipes(recipes);
     } else {

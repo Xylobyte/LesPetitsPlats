@@ -1,6 +1,6 @@
 // Manage input fields
 // ------------------------------------------------------------------------------
-import {searchV1} from "../search/search-v1.js";
+import {loopSearch} from "../search/loop-search.js";
 import {filterLi, findType} from "../core/filters.js";
 
 const clearBtn = document.getElementById("clear-btn");
@@ -13,7 +13,7 @@ document.getElementById("search-bar").addEventListener('input', e => {
 
 clearBtn.addEventListener('click', e => {
     document.getElementById("search-bar").value = "";
-    searchV1('');
+    loopSearch('');
     clearBtn.classList.remove('visible');
 })
 
