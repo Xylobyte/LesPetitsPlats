@@ -34,9 +34,9 @@ export const createHashMap = () => {
     return map;
 };
 
-export const hashmapSearch = (search) => {
-    const hashmap = getSearchHashmap();
+const hashmap = getSearchHashmap();
 
+export const hashmapSearch = (search) => {
     if (search.length < 3 || hashmap === undefined) {
         setSearchedRecipes(recipes);
     } else {
